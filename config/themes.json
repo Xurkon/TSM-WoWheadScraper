@@ -1,0 +1,15 @@
+{
+  "active_theme": "tsm_dark",
+  "themes": {},
+  "builtin_overrides": {
+    "tsm_dark": {
+      "text_gray": "#ffffff",
+      "accent_primary": "#c0c0c0",
+      "accent_primary_dark": "#4b4b4b",
+      "accent_secondary_dark": "#757575",
+      "font_size_body": 12,
+      "font_size_small": 14,
+      "font_size_tiny": 12
+    }
+  }
+}

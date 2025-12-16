@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# Binaries
+*.exe
+
+# Source files (User requested to ignore unzipped source)
+*.py
+tsm_scraper/
+
+# Data files
+cache/
+logs/
+*.lua
+TradeSkillMasterBackup.lua

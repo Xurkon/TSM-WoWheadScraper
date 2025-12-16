@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSM Wowhead Scraper - Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-orange: #d29922;
+            --border-color: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1f35 0%, #0d1117 50%, #162030 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(59, 185, 80, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .badge.version {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .badge.wow {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        .badge.platform {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2ea043;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 28px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--accent-blue);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .commands-list {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .command-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .command-item:last-child {
+            border-bottom: none;
+        }
+
+        .command-code {
+            font-family: 'Fira Code', monospace;
+            background: var(--bg-tertiary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            min-width: 180px;
+        }
+
+        .command-desc {
+            color: var(--text-secondary);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .addon-tag {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 18px;
+            text-align: center;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .addon-tag:hover {
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
+        }
+
+        .changelog {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .changelog h3 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        .changelog ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .changelog li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .changelog li:last-child {
+            border-bottom: none;
+        }
+
+        .changelog li::before {
+            content: '✓';
+            color: var(--accent-green);
+            margin-right: 10px;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .support-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .support-link {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .support-link.patreon {
+            background: #ff424d;
+            color: white;
+        }
+
+        .support-link.paypal {
+            background: #0070ba;
+            color: white;
+        }
+
+        .support-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>TSM Wowhead Scraper</h1>
+        <p class="subtitle">Item Scraping Tool for TradeSkillMaster using Wowhead</p>
+
+        <div class="badges">
+            <span class="badge version">v3.3.5</span>
+            <span class="badge wow">TSM Compatible</span>
+            <span class="badge platform">Python App</span>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="https://github.com/Xurkon/TSM-WoWheadScraper/releases/latest" class="btn btn-primary">
+                ⬇️ Download
+            </a>
+            <a href="https://github.com/Xurkon/TSM-WoWheadScraper" class="btn btn-secondary">
+                📂 View on GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🌍 Multi-Version</h3>
+                    <p>Support for all Wowhead databases: Retail, WotLK, TBC, Classic Era, Cataclysm, and MoP Classic.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>📦 Multi-Format</h3>
+                    <p>Whether you play Retail or WotLK 3.3.5a, export item strings in the exact format your client
+                        needs (i:ID or item:ID).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🖥️ Modern GUI</h3>
+                    <p>Sleek, dark-themed interface built with CustomTkinter. Customize the look with the built-in Theme
+                        Editor.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Fast & Safe</h3>
+                    <p>Automatically backs up your TSM configuration before every import. Caches scraping results for
+                        instant subsequent lookups.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section>
+            <h2>Latest Changes</h2>
+            <div class="changelog">
+                <h3>v3.3.0 - UI Overhaul</h3>
+                <ul>
+                    <li>Manual Item IDs: Add or remove specific item IDs with single entry, paste list, or remove mode
+                    </li>
+                    <li>4-Column UI Layout: Options | Categories | Results | Groups for better workflow</li>
+                    <li>Draggable Column Resize: Drag dividers between columns to customize widths</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v3.2.0 - Feature Merge</h3>
+                <ul>
+                    <li>Bind Type Filter: Filter by BoE, BoP, BoU, BoA, Quest, Warbound, No Binding</li>
+                    <li>Auto-Create Default Groups: Generate 145 TSM groups with one click</li>
+                    <li>Group Management: Right-click groups for Rename, Add Sub-Group, Delete</li>
+                    <li>Profile Management: Store and switch between up to 5 TSM profiles</li>
+                    <li>Copy Log: 📋 button copies session log to clipboard</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v2.1.3 - Recipe Categories</h3>
+                <ul>
+                    <li>Recipe Categories: Added 9 recipe categories for all professions</li>
+                    <li>GUI Improvements: Category headers now auto-select all items</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v2.0.0 - Modern GUI Overhaul</h3>
+                <ul>
+                    <li>New UI: Complete rewrite using CustomTkinter for a modern look</li>
+                    <li>Category Browser: Select specific item types to scrape (Weapons, Armor, etc.)</li>
+                    <li>TSM Groups: Browse your TSM group hierarchy directly in the sidebar</li>
+                    <li>Theme Editor: 4 built-in themes + custom color customization</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://github.com/Xurkon">Xurkon</a></p>
+
+        <div class="support-links">
+            <a href="https://www.patreon.com/Xurkon" class="support-link patreon">❤️ Patreon</a>
+            <a href="https://www.paypal.com/donate?business=kancerous@gmail.com" class="support-link paypal">💙
+                PayPal</a>
+        </div>
+    </footer>
+</body>
+
+</html>
