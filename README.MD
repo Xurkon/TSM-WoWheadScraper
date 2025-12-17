@@ -76,13 +76,12 @@ Filter items by binding type: **BoE, BoP, BoU, BoA, Quest, Warbound**, or **No B
 
 See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
-### v3.4.3 - Group Management
+### v3.4.3 - Bug Fixes
 
-- **Window Position Memory**: App remembers position and size across sessions
-- **Collapsible Groups**: Click to expand groups and view items inside
-- **Ctrl+Click Multi-Select**: Select multiple groups for bulk operations
-- **Move Groups**: Right-click → Move to relocate groups
-- **Remove Selected Items**: Delete checked items directly from groups
+- **Fixed Group Collapse**: Collapse All button now properly collapses parent groups and hides children
+- **Fixed Expand Icons**: Groups with children now show expand/collapse arrows
+- **Optimized Loading**: Reduced UI hang when loading large SavedVariables files
+- **Fixed Theme**: Expanded item backgrounds now match the app theme
 
 ### v3.3.5 - Feature Sync
 
