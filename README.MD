@@ -2,7 +2,7 @@
 
 # TSM Wowhead Scraper
 
-![Version](https://img.shields.io/badge/version-v3.4.3-blue.svg)
+![Version](https://img.shields.io/badge/version-v3.4.4-blue.svg)
 ![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&label=LICENSE&color=2980b9)
 ![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/latest/total?style=for-the-badge&label=DOWNLOADS&color=e67e22)
 ![Python](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)

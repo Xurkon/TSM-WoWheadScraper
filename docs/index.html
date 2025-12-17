@@ -345,7 +345,7 @@
         <p class="subtitle">Cross-server Item Scraping Tool for TradeSkillMaster on Project Ascension &amp; Retail</p>
 
         <div class="badges">
-            <span class="badge version">v3.4.3</span>
+            <span class="badge version">v3.4.5</span>
             <span class="badge wow">TSM Compatible</span>
             <span class="badge platform">Python App</span>
         </div>
@@ -393,9 +393,23 @@
         <section>
             <h2>Latest Changes</h2>
             <div class="changelog">
-                <h3>v3.4.3 - Collapse Fix & Performance</h3>
+                <h3>v3.4.5 - Group Parsing Fix</h3>
                 <ul>
-                    <li>Fixed Group Collapse: Collapse All button now properly collapses parent groups and hides children</li>
+                    <li>Fixed Group Parsing: Groups no longer appear/disappear unexpectedly after delete operations</li>
+                    <li>Replaced faulty regex with robust brace-counting algorithm for Ascension TSM format</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v3.4.4 - Themed Dialogs</h3>
+                <ul>
+                    <li>Themed Dialogs: All confirmation dialogs now use dark theme (replaced unthemed Windows
+                        messageboxes)</li>
+                    <li>Added themed_showwarning: New themed warning dialog function for consistent UI</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v3.4.3 - Collapse Fix &amp; Performance</h3>
+                <ul>
+                    <li>Fixed Group Collapse: Collapse All button now properly collapses parent groups and hides
+                        children</li>
                     <li>Fixed Expand Icons: Groups with children now show expand/collapse arrows</li>
                     <li>Optimized Loading: Reduced UI hang when loading large SavedVariables files</li>
                     <li>Fixed Theme: Expanded item backgrounds now match the app theme</li>
@@ -410,7 +424,8 @@
 
                 <h3 style="margin-top: 20px;">v3.4.1 - Pane Position Fix</h3>
                 <ul>
-                    <li>Fixed Pane Position Memory: Column divider positions now properly saved and restored across sessions</li>
+                    <li>Fixed Pane Position Memory: Column divider positions now properly saved and restored across
+                        sessions</li>
                 </ul>
 
                 <h3 style="margin-top: 20px;">v3.4.0 - Group Management</h3>

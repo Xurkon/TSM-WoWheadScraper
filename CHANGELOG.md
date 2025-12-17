@@ -1,3 +1,22 @@
+## [v3.4.5] - 2025-12-17
+
+### Bug Fixes
+
+- **Fixed Group Parsing**: Groups no longer appear/disappear unexpectedly after delete operations
+  - Replaced faulty regex with robust brace-counting algorithm
+  - Handles deeply nested group structures correctly
+
+---
+
+## [v3.4.4] - 2025-12-17
+
+### Bug Fixes
+
+- **Themed Dialogs**: All confirmation dialogs now use dark theme (replaced unthemed Windows messageboxes)
+- **Added `themed_showwarning`**: New themed warning dialog function for consistent UI
+
+---
+
 ## [v3.4.3] - 2025-12-16
 
 ### Bug Fixes
