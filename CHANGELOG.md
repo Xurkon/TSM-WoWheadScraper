@@ -2,6 +2,21 @@
 
 **Created by [Xurkon](https://github.com/Xurkon)**
 
+## [v3.4.0] - 2025-12-16
+
+### New Features
+
+- **Window Position Memory**: App remembers window position and size across sessions
+- **Collapsible Groups**: Click any group with items to expand/collapse and see items inside
+  - Expand All / Collapse All buttons in groups panel header
+  - Items displayed with checkboxes for selection
+- **Ctrl+Click Multi-Selection**: Ctrl+click groups to select multiple for bulk operations
+- **Move Groups**: Right-click → Move Group to relocate groups to new parents
+- **Remove Selected Items**: In remove mode with no IDs entered, removes checked items from groups
+- **Bulk Operations**: Delete or move multiple selected groups at once
+
+---
+
 ## [v3.3.5] - 2025-12-16
 
 ### New Features
