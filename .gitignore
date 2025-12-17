@@ -24,3 +24,6 @@ cache/
 logs/
 *.lua
 TradeSkillMasterBackup.lua
+
+# Archives (old source versions)
+archive/
