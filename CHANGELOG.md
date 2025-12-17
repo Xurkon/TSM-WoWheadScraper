@@ -1,3 +1,14 @@
+## [v3.4.3] - 2025-12-16
+
+### Bug Fixes
+
+- **Fixed Group Collapse**: Collapse All button now properly collapses parent groups and hides children
+- **Fixed Expand Icons**: Groups with children now show expand/collapse arrows
+- **Optimized Loading**: Reduced UI hang when loading large SavedVariables files
+- **Fixed Theme**: Expanded item backgrounds now match the app theme
+
+---
+
 # TSM Item Scraper - Changelog
 
 **Created by [Xurkon](https://github.com/Xurkon)**
