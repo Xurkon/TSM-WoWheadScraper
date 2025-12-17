@@ -2,7 +2,7 @@
 
 # TSM Wowhead Scraper
 
-![Version](https://img.shields.io/badge/version-v3.4.1-blue.svg)
+![Version](https://img.shields.io/badge/version-v3.4.2-blue.svg)
 ![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&label=LICENSE&color=2980b9)
 ![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/latest/total?style=for-the-badge&label=DOWNLOADS&color=e67e22)
 ![Python](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -76,7 +76,7 @@ Filter items by binding type: **BoE, BoP, BoU, BoA, Quest, Warbound**, or **No B
 
 See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
-### v3.4.1 - Group Management
+### v3.4.2 - Group Management
 
 - **Window Position Memory**: App remembers position and size across sessions
 - **Collapsible Groups**: Click to expand groups and view items inside
