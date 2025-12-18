@@ -2,7 +2,7 @@
 
 # TSM Wowhead Scraper
 
-![Version](https://img.shields.io/badge/version-v3.4.4-blue.svg)
+![Version](https://img.shields.io/badge/version-v3.4.15-blue.svg)
 ![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&label=LICENSE&color=2980b9)
 ![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/latest/total?style=for-the-badge&label=DOWNLOADS&color=e67e22)
 ![Python](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -75,6 +75,17 @@ Filter items by binding type: **BoE, BoP, BoU, BoA, Quest, Warbound**, or **No B
 ## 📜 Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for full version history.
+
+### v3.4.15 - NameError Fix
+
+- **Fixed Critical NameError**: Resolved crash in `lua_writer.py` when verifying group existence
+- **Version Display**: Sync GUI version to match build
+
+### v3.4.14 - TSM 2.8 Visibility Fix
+
+- **Non-Destructive UI Reset**: Modified `cleanup_ui_state` to preserve `groupTreeStatus`
+- **Missing Profile Keys**: Added auto-initialization for `groupTreeCollapsedStatus`, `isBankui`, and `moveImportedItems`
+- **Default Operation**: Updated group creation template to include `AlwaysUndercut` by default
 
 ### v3.4.3 - Bug Fixes
 

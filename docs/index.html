@@ -345,7 +345,7 @@
         <p class="subtitle">Cross-server Item Scraping Tool for TradeSkillMaster on Project Ascension &amp; Retail</p>
 
         <div class="badges">
-            <span class="badge version">v3.4.5</span>
+            <span class="badge version">v3.4.15</span>
             <span class="badge wow">TSM Compatible</span>
             <span class="badge platform">Python App</span>
         </div>
@@ -393,7 +393,20 @@
         <section>
             <h2>Latest Changes</h2>
             <div class="changelog">
-                <h3>v3.4.5 - Group Parsing Fix</h3>
+                <h3>v3.4.15 - NameError Fix</h3>
+                <ul>
+                    <li>Fixed Critical NameError: Resolved crash in lua_writer.py when verifying group existence</li>
+                    <li>GUI Sync: Updated version display to 3.4.15</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v3.4.14 - TSM 2.8 Visibility Fix</h3>
+                <ul>
+                    <li>Non-Destructive UI Reset: Modified cleanup_ui_state to preserve groupTreeStatus entries</li>
+                    <li>Enhanced Structural Integrity: Added missing profile keys for better TSM 2.8 compatibility</li>
+                    <li>Default Operation: Set Auctioning to "AlwaysUndercut" for new groups</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">v3.4.5 - Group Parsing Fix</h3>
                 <ul>
                     <li>Fixed Group Parsing: Groups no longer appear/disappear unexpectedly after delete operations</li>
                     <li>Replaced faulty regex with robust brace-counting algorithm for Ascension TSM format</li>
