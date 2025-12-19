@@ -1,18 +1,33 @@
-# Changelog
+# CHANGELOG - TSM-WoWheadScraper
 
-## [3.4.15] - 2025-12-18
+## [3.4.17] - 2024-12-18
+### Changed
+- Removed "Bind on Pickup (BoP)" filter option to simplify scraping and avoid missing tradeable items due to complex Wowhead filter logic.
+
+## [3.4.16] - 2024-12-18
+### Fixed
+- Fixed an issue where the WoWhead scraper would return 0 items for small categories or filtered results (e.g., BoE Crossbows on Classic).
+- Relaxed item detection thresholds in `wowhead_scraper.py` to correctly identify small item arrays.
+- Enhanced JSON parsing for Wowhead JS objects to handle unquoted keys in various formats.
+- Improved regex fallback matching (Strategy 2) to handle `WH.Gatherer.addData` and non-standard object structures.
+- Updated application version to 3.4.16.
+
+## [3.4.15] - 2024-12-18
 ### Fixed
 - Fixed critical `NameError` in `lua_writer.py` when verifying group existence.
 - Corrected version display in GUI.
+- Synced `lua_writer.py` changes with TSMItemScraper.
+- Updated application version to 3.4.15.
 
-## [3.4.14] - 2025-12-18
+## [3.4.14] - 2024-12-18
+### Added
+- Improved visibility for TSM 2.8 groups on Project Ascension (TSM Scraper).
+
 ### Fixed
-- Fixed critical bug where `cleanup_ui_state` was wiping newly added `groupTreeStatus` entries.
-- Added missing profile keys (`groupTreeCollapsedStatus`, `isBankui`, `moveImportedItems`) for TSM 2.8 structural integrity.
-- Updated default group operation to `"AlwaysUndercut"` for better out-of-the-box functionality.
-- Improved profile replenishment logic for fresh TSM profiles.
+- Improved handling of TSM 2.8 group tree status.
+- Finalized TSM 2.8 visibility fixes for Ascension.
 
-## [3.4.13] - 2025-12-18
+## [3.4.13] - 2024-12-18
 ### Fixed
 - Improved `groupTreeStatus` handling for Ascension TSM (TSM 2.8).
 - Added `_ensure_group_tree_status_ascension` to ensure groups are visible in the sidebar.

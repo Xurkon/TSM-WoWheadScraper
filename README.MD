@@ -2,7 +2,7 @@
 
 # TSM Wowhead Scraper
 
-![Version](https://img.shields.io/badge/version-v3.4.15-blue.svg)
+![Version](https://img.shields.io/badge/version-3.4.17-blue.svg)
 ![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&label=LICENSE&color=2980b9)
 ![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/latest/total?style=for-the-badge&label=DOWNLOADS&color=e67e22)
 ![Python](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -75,6 +75,17 @@ Filter items by binding type: **BoE, BoP, BoU, BoA, Quest, Warbound**, or **No B
 ## 📜 Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for full version history.
+
+### [3.4.17] - 2024-12-18
+### Changed
+- Removed "Bind on Pickup (BoP)" filter option to simplify scraping and avoid missing tradeable items due to complex Wowhead filter logic.
+
+### [3.4.16] - 2024-12-18
+### Fixed
+- Fixed an issue where the WoWhead scraper would return 0 items for small categories or filtered results (e.g., BoE Crossbows on Classic).
+- Relaxed item detection thresholds in `wowhead_scraper.py` to correctly identify small item arrays.
+- Enhanced JSON parsing for Wowhead JS objects to handle unquoted keys.
+- Improved regex fallback matching for `WH.Gatherer.addData`.
 
 ### v3.4.15 - NameError Fix
 

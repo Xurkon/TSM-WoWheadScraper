@@ -345,7 +345,7 @@
         <p class="subtitle">Cross-server Item Scraping Tool for TradeSkillMaster on Project Ascension &amp; Retail</p>
 
         <div class="badges">
-            <span class="badge version">v3.4.15</span>
+            <img src="https://img.shields.io/badge/version-3.4.17-blue.svg" alt="Version">
             <span class="badge wow">TSM Compatible</span>
             <span class="badge platform">Python App</span>
         </div>
@@ -393,11 +393,44 @@
         <section>
             <h2>Latest Changes</h2>
             <div class="changelog">
-                <h3>v3.4.15 - NameError Fix</h3>
-                <ul>
-                    <li>Fixed Critical NameError: Resolved crash in lua_writer.py when verifying group existence</li>
-                    <li>GUI Sync: Updated version display to 3.4.15</li>
-                </ul>
+                <div class="version-entry">
+                    <div class="version-header">
+                        <span class="version-number">v3.4.17</span>
+                        <span class="version-date">December 18, 2024</span>
+                    </div>
+                    <ul>
+                        <li>Removed "Bind on Pickup (BoP)" filter option to simplify scraping and avoid missing
+                            tradeable items.</li>
+                    </ul>
+                </div>
+
+                <div class="version-entry">
+                    <div class="version-header">
+                        <span class="version-number">v3.4.16</span>
+                        <span class="version-date">December 18, 2024</span>
+                    </div>
+                    <ul>
+                        <li>Fixed an issue where the WoWhead scraper would return 0 items for small categories or
+                            filtered results (e.g., BoE Crossbows on Classic).</li>
+                        <li>Relaxed item detection thresholds in <code>wowhead_scraper.py</code> to correctly identify
+                            small item arrays.</li>
+                        <li>Enhanced JSON parsing for Wowhead JS objects to handle unquoted keys.</li>
+                        <li>Improved regex fallback matching for <code>WH.Gatherer.addData</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="version-entry">
+                    <div class="version-header">
+                        <span class="version-number">v3.4.15</span>
+                        <span class="version-date">December 18, 2024</span>
+                    </div>
+                    <ul>
+                        <li>Fixed critical <code>NameError</code> in <code>lua_writer.py</code> when verifying group
+                            existence.</li>
+                        <li>Corrected version display in GUI.</li>
+                        <li>Synced <code>lua_writer.py</code> changes with TSMItemScraper.</li>
+                    </ul>
+                </div>
 
                 <h3 style="margin-top: 20px;">v3.4.14 - TSM 2.8 Visibility Fix</h3>
                 <ul>
