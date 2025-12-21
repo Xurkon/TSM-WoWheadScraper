@@ -1,5 +1,15 @@
 # CHANGELOG - TSM-WoWheadScraper
 
+## [3.4.18] - 2024-12-20
+### Added
+- **Linux/Wine/Bottles Compatibility**: Added detection for Wine/Proton/Bottles environments. Config and logs are now stored locally in an `appdata/` folder when running under Wine to avoid path mapping issues.
+- **Crash Logging**: Added automatic `crash_log.txt` generation for unhandled exceptions. Includes full stack trace, environment info, and Wine detection status to help diagnose issues on Linux.
+
+### Fixed
+- Fixed potential crashes when `APPDATA` environment variable is not properly set under Wine.
+
+---
+
 ## [3.4.17] - 2024-12-18
 ### Changed
 - Removed "Bind on Pickup (BoP)" filter option to simplify scraping and avoid missing tradeable items due to complex Wowhead filter logic.
