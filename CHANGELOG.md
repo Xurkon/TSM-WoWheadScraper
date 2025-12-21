@@ -1,5 +1,11 @@
 # CHANGELOG - TSM-WoWheadScraper
 
+## [3.4.19] - 2024-12-21
+### Fixed
+- **Import Button for Manual IDs**: Fixed issue where the "Import to TSM" button remained disabled after pasting item IDs. The button now correctly enables when manual IDs are added or removed.
+
+---
+
 ## [3.4.18] - 2024-12-20
 ### Added
 - **Linux/Wine/Bottles Compatibility**: Added detection for Wine/Proton/Bottles environments. Config and logs are now stored locally in an `appdata/` folder when running under Wine to avoid path mapping issues.
