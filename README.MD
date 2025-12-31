@@ -1,9 +1,3 @@
-> [!WARNING]
-> ## ⚠️ Project Ascension ID Warning
-> **Project Ascension uses different Item IDs than Retail WoW.**
->
-> Importing IDs directly from WoWhead may return **unexpected items** or incorrect data. Always verify IDs against the [Ascension Database](https://ascension.gg/database) or in-game tooltips before importing.
-
 <div align="center">
 
 # TSM Wowhead Scraper
