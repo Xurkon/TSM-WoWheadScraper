@@ -8,9 +8,12 @@
 
 # TSM Wowhead Scraper
 
-![Version](https://img.shields.io/badge/version-v3.4.4-blue.svg)
-![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&label=LICENSE&color=2980b9)
-![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/latest/total?style=for-the-badge&label=DOWNLOADS&color=e67e22)
+![Version](https://img.shields.io/badge/version-v3.4.4-blue.svg?style=for-the-badge)
+![Downloads](https://img.shields.io/github/downloads/Xurkon/TSM-WoWheadScraper/total?style=for-the-badge&color=e67e22)
+[![Documentation](https://img.shields.io/badge/Documentation-View%20Docs-58a6ff?style=for-the-badge)](https://xurkon.github.io/TSM-WoWheadScraper/)
+[![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/Xurkon)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.me/Xurkon)
+![License](https://img.shields.io/github/license/Xurkon/TSM-WoWheadScraper?style=for-the-badge&color=2980b9)
 ![Python](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/PLATFORM-WINDOWS-blue?style=for-the-badge&logo=windows&logoColor=white)
 
